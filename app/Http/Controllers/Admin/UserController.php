@@ -6,7 +6,8 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\User;
 use App\Http\Requests\Admin\UserRequest;
-
+use Illuminate\Support\Facades\Hash;
+use Yajra\DataTables\DataTables;
 
 class UserController extends Controller
 {
@@ -15,24 +16,41 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        if(request()->ajax())
+        {
+            $query = User::query();
+            return DataTables::of($query)
+                ->addcolumn('action', function($item) {
+                    return '
+                        <div class="btn-group">
+                            <div class="dropdown">
+                                <button class="btn btn-primary dropdown-toggle mr-1 mb-1"
+                                        type="button"
+                                        data-toggle="dropdown">
+                                        Aksi
+                                </button>
+                                <div class="dropdown-menu">
+                                    <a class="dropdown-item" href="' . route('user.edit', $item->id) . '">
+                                        Sunting
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    ';
+                })
+
+                ->rawColumns(['action'])
+                ->make();
+        }
+
+        return view('pages.admin.user.index');
     }
 
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
-    {
-        //
-    }
 
-    /**
-     * Store a newly created resource in storage.
-     */
-    public function store(UserRequest $request)
-    {
-        //
-    }
+
 
     /**
      * Display the specified resource.
@@ -47,7 +65,10 @@ class UserController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $item = User::findOrFail($id);
+        return view('pages.admin.user.edit', [
+            'item' => $item
+        ]);
     }
 
     /**
@@ -55,14 +76,12 @@ class UserController extends Controller
      */
     public function update(UserRequest $request, string $id)
     {
-        //
-    }
+        $data['roles'] = $request->roles;
 
-    /**
-     * Remove the specified resource from storage.
-     */
-    public function destroy(string $id)
-    {
-        //
+        $item = User::findOrFail($id);
+
+        $item->update($data);
+
+        return redirect()->route('user.index');
     }
 }
