@@ -8,7 +8,6 @@ use Illuminate\Http\Request;
 use App\Models\Room;
 use App\Http\Requests\Admin\RoomRequest;
 use Yajra\DataTables\DataTables;
-use Yajra\DataTables\Services\DataTable;
 
 class RoomController extends Controller
 {

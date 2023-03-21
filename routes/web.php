@@ -8,6 +8,8 @@ use App\Http\Controllers\Admin\LectureController;
 use App\Http\Controllers\Admin\RoomController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\UserController;
+use App\Http\Controllers\ToolController;
+use App\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,7 +28,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+Route::get('/alat', [ToolController::class, 'index'])->name('home');
+
 Route::resource('banner', BannerController::class);
 Route::resource('category', CategoryController::class);
 Route::resource('course', CourseController::class);

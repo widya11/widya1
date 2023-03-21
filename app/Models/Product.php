@@ -36,4 +36,9 @@ class Product extends Model
     {
         return $this->belongsTo(Room::class, 'rooms_id', 'id');
     }
+
+    public function galleries()
+    {
+        return $this->hasMany(ProductGallery::class, 'products_id', 'id');
+    }
 }
