@@ -12,8 +12,6 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Fonts -->
-    {{-- <link rel="dns-prefetch" href="//fonts.gstatic.com"> --}}
-    <link href="https://fonts.bunny.net/css?family=Nunito" rel="stylesheet">
 
     <link href="/css/style.css" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet" type="text/css"/>
@@ -29,14 +27,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Laravel | Dashboard</title>
+    <title>@yield('title')</title>
 	
 	<meta name="description" content="Some description for the page"/>
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="http://test-peminjaman.test/images/favicon.png">
-    <link href="/vendor/bootstrap-select/dist/css/bootstrap-select.min.css" rel="stylesheet" type="text/css"/>
-    <link href="/vendor/datatables/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css"/>	
-    <link href="/css/style.css" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('/vendor/bootstrap-select/dist/css/bootstrap-select.min.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('/vendor/datatables/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>	
+    <link href="{{ asset('/css/style.css') }}" rel="stylesheet" type="text/css"/>
     
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&amp;family=Roboto:wght@100;300;400;500;700;900&amp;display=swap" rel="stylesheet" type="text/css"/>
 </head>
@@ -77,5 +75,6 @@
         </div>
             
         @include('elements.footer-scripts')
-</body>
+        @stack('addon-scripts')
+    </body>
 </html>

@@ -6,12 +6,14 @@
         <span class="nav-text">Dashboard</span>
       </a>
       <ul aria-expanded="false">
-        <li><a href="http://test-peminjaman.test/index">Dashboard</a></li>
-        <!-- <li><a href="http://test-peminjaman.test/workout-statistic">Workout Statistic</a></li>
-        <li><a href="http://test-peminjaman.test/workoutplan">Workout Plan</a></li>
-        <li><a href="http://test-peminjaman.test/distance-map">Distance Map</a></li>
-        <li><a href="http://test-peminjaman.test/food-menu">Diet Food Menu</a></li>
-        <li><a href="http://test-peminjaman.test/personal-record">Personal Record</a></li> -->
+        <li><a href="{{ route('home') }}">Dashboard</a></li>
+        <li><a href="{{ route('banner.index') }}">Banner</a></li>
+        <li><a href="{{ route('category.index') }}">Kategori</a></li>
+        <li><a href="{{ route('course.index') }}">Matakuliah</a></li>
+        <li><a href="{{ route('lecture.index') }}">Dosen</a></li>
+        <li><a href="{{ route('room.index') }}">Ruangan</a></li>
+        <li><a href="{{ route('product.index') }}">Produk</a></li>
+        <li><a href="{{ route('user.index') }}">User</a></li>
       </ul>
       </li>
       <li><a class="has-arrow ai-icon" href="javascript:void()" aria-expanded="false">
