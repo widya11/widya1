@@ -20,22 +20,22 @@
                                     <div class="row">
                                         @forelse ($products as $product)
                                             <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
-                                                <div class="card">
-                                                    <div class="card-body">
-                                                        <div class="new-arrival-product">
-                                                            <div class="new-arrivals-img-contnent">
-                                                                <img class="img-fluid" src="http://test-peminjaman.test/images/product/3.jpg" alt="">
-                                                            </div>
-                                                            <div class="new-arrival-content text-center mt-3">
-                                                                <h4>
-                                                                    <a href="">
+                                                <a href="{{ route('detail-tool', $product->slug) }}">
+                                                    <div class="card">
+                                                        <div class="card-body">
+                                                            <div class="new-arrival-product">
+                                                                <div class="new-arrivals-img-contnent">
+                                                                    <img class="img-fluid" src="{{ Storage::url($product->galleries->first()->photos) }}" alt="">
+                                                                </div>
+                                                                <div class="new-arrival-content text-center mt-3">
+                                                                    <h4>
                                                                         {{ $product->name }}
-                                                                    </a>
-                                                                </h4>
+                                                                    </h4>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </div>
                                         @empty
                                             <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">

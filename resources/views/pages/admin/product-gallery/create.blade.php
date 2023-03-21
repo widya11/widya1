@@ -2,7 +2,7 @@
 
 
 @section('title')
-    Tambah Kategori
+    Tambah Galeri Produk
 @endsection
 
 {{-- Content --}}
@@ -25,13 +25,18 @@
                     @endif
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('category.store') }}" method="POST" enctype="multipart/form-data">
+                            <form action="{{ route('product-gallery.store') }}" method="POST" enctype="multipart/form-data">
                                 @csrf
                                 <div class="row mb-4">
                                     <div class="col-md-12">
                                         <div class="form-group">
-                                            <label>Nama</label>
-                                            <input type="text" name="name" class="form-control">
+                                            <label>Produk</label>
+                                            <select name="products_id" class="form-control default-select">
+                                                <option value="" selected disabled>Pilih Produk</option>
+                                                @foreach ($products as $product)
+                                                    <option value="{{ $product->id }}">{{ $product->name }}</option>
+                                                @endforeach
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -39,7 +44,7 @@
                                             <label>Foto</label>
                                             <div class="input-group">
                                                 <div class="custom-file">
-                                                    <input type="file" name="photo" class="custom-file-input">
+                                                    <input name="photos" type="file" class="custom-file-input">
                                                     <label class="custom-file-label">Choose file</label>
                                                 </div>
                                             </div>

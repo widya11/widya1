@@ -14,10 +14,10 @@
         <i class="flaticon-381-television"></i>
         <span class="nav-text">Peminjaman</span>
       </a>
-      <ul aria-expanded="false">
-        <li><a href="http://test-peminjaman.test/ecom-product-grid1">Ruangan</a></li>
-        <li class=""><a href="http://test-peminjaman.test/ecom-product-grid">Alat</a></li>
-      </ul>
+        <ul aria-expanded="false">
+          <li><a href="http://test-peminjaman.test/ecom-product-grid1">Ruangan</a></li>
+          <li class=""><a href="{{ route('tool-all') }}">Alat</a></li>
+        </ul>
       </li>
 
       <li>
@@ -32,6 +32,7 @@
           <li><a href="{{ route('lecture.index') }}">Dosen</a></li>
           <li><a href="{{ route('room.index') }}">Ruangan</a></li>
           <li><a href="{{ route('product.index') }}">Produk</a></li>
+          <li><a href="{{ route('product-gallery.index') }}">Galeri Produk</a></li>
           <li><a href="{{ route('user.index') }}">User</a></li>
         </ul>
       </li>
