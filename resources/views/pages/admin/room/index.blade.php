@@ -1,22 +1,22 @@
+@extends('layouts.dashboard')
 
+
+@section('title')
+    Ruangan
+@endsection
+
+@section('content')
 <div
     class="section-content section-dashboard-home"
-    data-aos="fade-up"
     >
     <div class="container-fluid">
-        <div class="dashboard-heading">
-            <h2 class="dashboard-title">Ruangan</h2>
-            <p class="dashboard-subtitle">
-                List Ruangan
-            </p>
-        </div>
         <div class="dashboard-content">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('room.create') }}" class="btn btn-primary mb-3">
-                            + Tambah Ruangan Baru</a>
+                            <a href="{{ route('room.create') }}" class="float-right btn btn-primary mb-3">
+                            + Tambah</a>
                             <div class="table-responsive">
                             <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
                                 <thead>
@@ -38,6 +38,9 @@
     </div>
 </div>
 
+@endsection
+
+@push('addon-scripts')
 <script>
     var datatable = $('#crudTable').DataTable({
         processing: true,
@@ -60,3 +63,5 @@
         ]
     })
 </script>
+
+@endpush

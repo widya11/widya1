@@ -1,14 +1,16 @@
+@extends('layouts.dashboard')
+
+
+@section('title')
+    Tambah Ruangan
+@endsection
+
+{{-- Content --}}
+@section('content')
+
 <div
-    class="section-content section-dashboard-home"
-    data-aos="fade-up"
-    >
+    class="section-content section-dashboard-home">
     <div class="container-fluid">
-        <div class="dashboard-heading">
-            <h2 class="dashboard-title">Ruangan</h2>
-            <p class="dashboard-subtitle">
-                Tambah Ruangan
-            </p>
-        </div>
         <div class="dashboard-content">
             <div class="row">
                 <div class="col-md-12">
@@ -41,7 +43,7 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Gedung</label>
-                                            <select name="building">
+                                            <select name="building" class="form-control default-select">
                                                 <option value="" selected disabled>Pilih Gedung</option>
                                                 <option value="Gedung Utama">Gedung Utama</option>
                                                 <option value="Teaching Factory">Teaching Factory</option>
@@ -72,3 +74,5 @@
         </div>
     </div>
 </div>
+
+@endsection

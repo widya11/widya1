@@ -33,10 +33,10 @@ class ProductController extends Controller
                                         Aksi
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="' . route('room.edit', $item->id) . '">
+                                    <a class="dropdown-item" href="' . route('product.edit', $item->id) . '">
                                         Sunting
                                     </a>
-                                    <form action="'. route('room.destroy', $item->id) .'" method="POST">
+                                    <form action="'. route('product.destroy', $item->id) .'" method="POST">
                                         ' . method_field('delete') . csrf_field() .'    
                                         <button type="submit" class="dropdown-item text-danger">
                                             Hapus

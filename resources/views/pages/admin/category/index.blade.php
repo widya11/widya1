@@ -17,7 +17,7 @@
                     <div class="card">
                         <div class="card-body ">
                             <a href="{{ route('category.create') }}" class="float-right btn btn-primary mb-3">
-                            + Tambah Kategori Baru</a>
+                            + Tambah</a>
                             <div class="table-responsive">
                             <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
                                 <thead>
@@ -54,7 +54,6 @@
                 {data: 'id', name:'id'},
                 {data: 'name', name:'name'},
                 {data: 'photo', name:'photo'},
-                {data: 'slug', name:'slug'},
                 {
                     data: 'action',
                     name: 'action',

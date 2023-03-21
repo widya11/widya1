@@ -1,14 +1,17 @@
+@extends('layouts.dashboard')
+
+
+@section('title')
+    Tambah Matakuliah
+@endsection
+
+{{-- Content --}}
+@section('content')
+
 <div
     class="section-content section-dashboard-home"
-    data-aos="fade-up"
     >
     <div class="container-fluid">
-        <div class="dashboard-heading">
-            <h2 class="dashboard-title">Matakuliah</h2>
-            <p class="dashboard-subtitle">
-                Tambah Matakuliah
-            </p>
-        </div>
         <div class="dashboard-content">
             <div class="row">
                 <div class="col-md-12">
@@ -41,7 +44,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col text-right">
-                                        <button class="btn btn-success px-5">
+                                        <button class="btn btn-primary px-5">
                                             Save now
                                         </button>
                                     </div>
@@ -54,3 +57,5 @@
         </div>
     </div>
 </div>
+
+@endsection
