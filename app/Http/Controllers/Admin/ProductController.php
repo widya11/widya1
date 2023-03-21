@@ -106,8 +106,15 @@ class ProductController extends Controller
     public function edit(string $id)
     {
         $item = Product::findOrFail($id);
+        $users = User::all();
+        $categories = Category::all();
+        $rooms = Room::all();
+
         return view('pages.admin.product.edit', [
-            'item' => $item
+            'item' => $item,
+            'users' => $users,
+            'categories' => $categories,
+            'rooms' => $rooms,
         ]);
     }
 

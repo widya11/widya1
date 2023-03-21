@@ -1,30 +1,32 @@
+@extends('layouts.dashboard')
 
+
+@section('title')
+    Produk
+@endsection
+
+@section('content')
 <div
     class="section-content section-dashboard-home"
-    data-aos="fade-up"
     >
     <div class="container-fluid">
-        <div class="dashboard-heading">
-            <h2 class="dashboard-title">Produk</h2>
-            <p class="dashboard-subtitle">
-                List Produk
-            </p>
-        </div>
         <div class="dashboard-content">
             <div class="row">
                 <div class="col-md-12">
                     <div class="card">
                         <div class="card-body">
-                            <a href="{{ route('product.create') }}" class="btn btn-primary mb-3">
-                            + Tambah Produk Baru</a>
+                            <a href="{{ route('product.create') }}" class="float-right btn btn-primary mb-3">
+                            + Tambah</a>
                             <div class="table-responsive">
                             <table class="table table-hover scroll-horizontal-vertical w-100" id="crudTable">
                                 <thead>
                                     <tr>
                                         <th>ID</th>
-                                        <th>Code</th>
-                                        <th>Nama</th>
-                                        <th>Aksi</th>
+                                        <th>Nomor BMN</th>
+                                        <th>Deskripsi</th>
+                                        <th>Stok</th>
+                                        <th>Lokasi</th>
+                                        <th>Kondisi</th>
                                     </tr>
                                 </thead>
                                 <tbody></tbody>
@@ -38,6 +40,10 @@
     </div>
 </div>
 
+@endsection
+
+@push('addon-scripts')
+
 <script>
     var datatable = $('#crudTable').DataTable({
         processing: true,
@@ -48,8 +54,11 @@
         },
         columns: [
             {data: 'id', name:'id'},
-            {data: 'code', name:'code'},
-            {data: 'name', name:'name'},
+            {data: 'nomor_bmn', name:'nomor_bmn'},
+            {data: 'description', name:'description'},
+            {data: 'stock', name:'stock'},
+            {data: 'location', name:'location'},
+            {data: 'condition', name:'condition'},
             {
                 data: 'action',
                 name: 'action',
@@ -60,3 +69,4 @@
         ]
     })
 </script>
+@endpush

@@ -1,14 +1,17 @@
+@extends('layouts.dashboard')
+
+
+@section('title')
+    Tambah Produk
+@endsection
+
+{{-- Content --}}
+@section('content')
+
 <div
     class="section-content section-dashboard-home"
-    data-aos="fade-up"
     >
     <div class="container-fluid">
-        <div class="dashboard-heading">
-            <h2 class="dashboard-title">Produk</h2>
-            <p class="dashboard-subtitle">
-                Tambah Produk
-            </p>
-        </div>
         <div class="dashboard-content">
             <div class="row">
                 <div class="col-md-12">
@@ -41,7 +44,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>User</label>
-                                            <select name="users_id">
+                                            <select name="users_id" class="form-control default-select">
+                                                <option value="" selected disabled>Pilih User</option>
                                                 @foreach ($users as $user)
                                                     <option value="{{ $user->id }}">{{ $user->name }}</option>
                                                 @endforeach
@@ -52,7 +56,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kategori</label>
-                                            <select name="categories_id">
+                                            <select name="categories_id" class="form-control default-select">
+                                                <option value="" selected disabled>Pilih Kategori</option>
                                                 @foreach ($categories as $category)
                                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                                 @endforeach
@@ -63,9 +68,10 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Ruangan</label>
-                                            <select name="rooms_id">
+                                            <select name="rooms_id" class="form-control default-select">
+                                                <option value="" selected disabled>Pilih Ruangan</option>
                                                 @foreach ($rooms as $room)
-                                                    <option value="{{ $room->id }}">{{ $room->name }}</option>
+                                                    <option value="{{ $room->id }}">{{ $room->code }} - {{ $room->name }}</option>
                                                 @endforeach
                                             </select>
                                         </div>
@@ -95,7 +101,8 @@
                                     <div class="col-md-12">
                                         <div class="form-group">
                                             <label>Kondisi</label>
-                                            <select name="rooms_id">
+                                            <select name="condition" class="form-control default-select">
+                                                <option value="" selected disabled>Pilih Kondisi</option>
                                                 <option value="Baik">Baik</option>
                                                 <option value="Rusak">Rusak</option>
                                             </select>
@@ -104,7 +111,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col text-right">
-                                        <button class="btn btn-success px-5">
+                                        <button class="btn btn-primary px-5">
                                             Save now
                                         </button>
                                     </div>
@@ -117,3 +124,4 @@
         </div>
     </div>
 </div>
+@endsection
