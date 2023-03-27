@@ -95,7 +95,6 @@ class LectureSeeder extends Seeder
             array('code' => 'DR', 'name' => 'Muhammad Doris ST'),
             array('code' => 'SM', 'name' => 'Sumarto S.S.T'),
             array('code' => 'HL', 'name' => 'Hilda Herasmus S.Kom.,M.Kom'),
-            array('code' => 'Test', 'name' => 'test'),
             
 		      );
 
